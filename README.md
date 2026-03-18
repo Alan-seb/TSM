@@ -2,6 +2,9 @@
 
 
 **DISCONTINUED!!**
+
+
+
 TJCT is a minimal, deterministic helper module that converts structured
 log queries into safe `journalctl` command strings.
 
