@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Profile Card</title>
+    <style>
+        /* CSS: Making it look sharp */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        h2 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .btn {
+            background-color: #764ba2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #5a3680;
+        }
+
+        .stats {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="profile-img">👤</div>
+        <h2>Alex Rivers</h2>
+        <p>Creative Developer & Tech Enthusiast. I enjoy building clean interfaces and solving complex problems.</p>
+        
+        <button class="btn" onclick="addLike()">Connect</button>
+        
+        <div class="stats">
+            <span id="like-count">0</span> Connections
+        </div>
+    </div>
+
+    <script>
+        /* JavaScript: Adding interactivity */
+        let count = 0;
+        function addLike() {
+            count++;
+            const display = document.getElementById('like-count');
+            display.innerText = count;
+            
+            // A little visual feedback
+            const btn = document.querySelector('.btn');
+            btn.innerText = "Connected!";
+            btn.style.background = "#48bb78";
+        }
+    </script>
+
+</body>
+</html>
